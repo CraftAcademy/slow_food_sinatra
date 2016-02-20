@@ -6,8 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SlowFood S W</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.css">
-  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.1/foundation.min.css"-->
+  <link rel="stylesheet" type="text/css" href="<%= url("/css/foundation.css")%>">
+  <link rel="stylesheet" type="text/css" href="<%= url("/css/custom.css")%>">
+  <link rel="stylesheet" type="text/css" href="<%= url("/cfoundation-icons/foundation-icons.css")%>">
+  <link rel="stylesheet" type="text/css" href="<%= url("/css/app.css")%>">
+  <!--link rel="stylesheet" href="/css/app.css" /-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/vendor/modernizr.js"></script>
+
+
 
 
 </head>
@@ -19,7 +26,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="#">Slow Food</a>
+          <a href="#">SlowFood</a>
         </h1>
       </li>
     </ul>
@@ -29,14 +36,14 @@
   <div class="row">
     <div class="large-12 columns">
       <h1>Where Slow means perfection!</h1>
-
       <p class="text-center">
         <a href="/menu" class="medium button radius">Menu</a>
       </p>
-
     </div>
   </div>
 </section>
+
+
 <% if current_user.try(:admin) %>
   <a href="/auth/admin/register" class="button">Register Admin</a>
 <% end %>
@@ -84,6 +91,8 @@
   });
 </script>
 
+
+
+
 </body>
 </html>
-

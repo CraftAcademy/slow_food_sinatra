@@ -102,6 +102,7 @@ Feature: As visitor or Admin,
     Given I am registerd and logged out as "visitor"
     And I click on "Log In"
     Then I should be on the "login" page
+    Then show me the page
     And I fill in "user[username]" with "Visitor"
     And I fill in "user[password]" with "password"
     And I click on "Log In"

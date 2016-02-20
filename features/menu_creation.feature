@@ -94,8 +94,5 @@ Feature: As a restuarnt owner
     Scenario: Add a dish as visitor even when am at the page
       Given I am registerd as visitor
       And I am on the Add Dish page
-      #And I click on "Menu"
-      #Then I should be on the "Menu" page
-      #Then I went to "menu/add_dish" page
       Then I should be on the "Add Dish" page
       And I should see "Please, enjoy ordering and leave dish creation to our Chef!"

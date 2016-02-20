@@ -1,7 +1,23 @@
-<form action="/auth/login" method="post">
+<!--form action="/auth/login" method="post">
   <p>Username:
     <input type="text" name="user[username]"/></p>
   <p>Password:
     <input type="password" name="user[password]"/></p>
   <input type="submit" value="Log In" class="button"/>
-</form>
+</form-->
+
+<div class="row">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+
+    <form action="/auth/login" method="post">
+      <div class="row column log-in-form">
+        <h4 class="text-center">Welcome Back!</h4>
+        <label>Username
+          <input type="text" name="user[username]">
+        </label>
+        <label>Password
+          <input type="password" name="user[password]">
+        </label>
+        <p><input type="submit" value="Log In" class="button expanded"/></p>
+      </div>
+    </form>
