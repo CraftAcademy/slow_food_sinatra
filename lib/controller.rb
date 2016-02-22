@@ -159,7 +159,7 @@ class SlowFood < Sinatra::Base
   end
 
   get '/cancel_order' do
-    #binding.pry
+    binding.pry
     #@basket = Basket.get(session[:b_id])
     session.tap { |hs| hs.delete(:b_id) }
     flash[:error] = 'Your order was cancelled'

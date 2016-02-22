@@ -82,6 +82,19 @@ Given(/^I am on the ([^"]*)$/) do |page|
   end
 end
 
+Given(/^Two "([^"]*)" added to my basket already$/) do |arg1|
+  steps '
+     Given I am logged in as "Visitor"
+     And I am on the home page
+     And I click on "Menu"
+     Then I should be on the "Menu" page
+     Then I should see "Fries"
+     And I fill in "basket_item[qty]" with "2" for "Fries"
+     And I click on "Add to basket" for "Fries"
+     Then I should see "Fries added to your basket"
+'
+end
+
 And(/^I click on "([^"]*)"$/) do |element|
   click_link_or_button element
 end
@@ -139,4 +152,8 @@ end
 
 Then(/^I should not see "([^"]*)"$/) do |string|
   page.should have_no_text string
+end
+
+Then(/^The time now is "([^"]*)"$/) do |time|
+ Timecop.freeze Time.parse(time)
 end

@@ -10,6 +10,8 @@ require 'rspec'
 require 'pry'
 require 'database_cleaner'
 require 'database_cleaner/cucumber'
+require 'timecop'
+
 
 Capybara.app = SlowFood
 

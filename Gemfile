@@ -35,4 +35,5 @@ group :development, :test do
   gem 'dm-rspec'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'timecop', '~> 0.8.0'
 end
