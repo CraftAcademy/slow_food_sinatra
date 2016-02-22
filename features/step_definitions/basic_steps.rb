@@ -99,6 +99,11 @@ And(/^I click on "([^"]*)"$/) do |element|
   click_link_or_button element
 end
 
+
+Then(/^I click on "([^"]*)" button$/) do |button_id|
+   click_button("cancel")
+end
+
 Then(/^I should be on the "([^"]*)" page$/) do |page|
   case page
   when 'Register'

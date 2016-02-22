@@ -30,14 +30,20 @@ Feature: As a visitor to the resturant website
       | Fruit    | Dessert     | 60    | Thomas |
       | IceCream | Dessert     | 75    | Mazen  |
 
+Scenario: Empty Basket
+    Given I am logged in as "Visitor"
+    And I am on the home page
+    And I click on "Menu"
+    Then I should be on the "Menu" page
+    Then I should see "Fries"
+    And I click on "View Basket"
+    And I should see "Your basket is empty"
 
  Scenario: View ordered dishes
     Given  Two "Fries" added to my basket already
     And I click on "View Basket"
     Then I should be on the "check out" page
     And I should see "2 Dishes of Fries, price per each: 35kr"
-
-
 
  Scenario: order finalization
     Given  Two "Fries" added to my basket already
@@ -54,6 +60,5 @@ Feature: As a visitor to the resturant website
     Then I should be on the "check out" page
     And I should see "2 Dishes of Fries, price per each: 35kr"
     And I click on "Cancel Order"
-    Then I should be on the "menu" page
-    Then show me the page
+    Then I should be on the "Menu" page
     And I should see "Your order was cancelled"

@@ -155,7 +155,6 @@ class SlowFood < Sinatra::Base
   end
 
   get '/cancel_order' do
-    binding.pry
     session.tap { |hs| hs.delete(:b_id) }
     flash[:error] = 'Your order was cancelled'
     redirect '/menu'
