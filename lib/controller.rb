@@ -46,7 +46,6 @@ class SlowFood < Sinatra::Base
     env['REQUEST_METHOD'] = 'POST'
   end
 
-  # binding.pry
   get '/' do
     erb :index
   end
@@ -152,29 +151,15 @@ class SlowFood < Sinatra::Base
 
   post '/check_out' do
     @basket = Basket.get(session[:b_id])
-
-    #@basket.set_pick_up_time
-    #binding.pry
     erb :order_confirm
   end
 
   get '/cancel_order' do
     binding.pry
-    #@basket = Basket.get(session[:b_id])
     session.tap { |hs| hs.delete(:b_id) }
     flash[:error] = 'Your order was cancelled'
     redirect '/menu'
   end
-
-  # post '/check_out' do
-  # binding.pry
-  #  @basket = Basket.get(session[:b_id])
-
-  #  #set delivery Time
-  # set status
-  # session.tap { |hs| hs.delete(:b_id) }
-  #  redirect '/'
-  # end
 
   get '/menu/add_dish' do
     env['warden'].authenticate!
