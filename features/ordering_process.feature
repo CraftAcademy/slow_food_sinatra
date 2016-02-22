@@ -30,7 +30,7 @@ Feature: As a visitor to the resturant website
       | Fruit    | Dessert     | 60    | Thomas |
       | IceCream | Dessert     | 75    | Mazen  |
 
-Scenario: Empty Basket
+ Scenario: Empty Basket
     Given I am logged in as "Visitor"
     And I am on the home page
     And I click on "Menu"

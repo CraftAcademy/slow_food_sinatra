@@ -35,7 +35,6 @@ Feature: As a restuarnt owner
     Then I should be on the "home" page
     And I click on "Menu"
     Then I should be on the "menu" page
-    #Then show me the page
     And I should see "You dont have any dishes yet"
 
   Scenario: menu visible for : admin
@@ -91,8 +90,8 @@ Feature: As a restuarnt owner
     Then I should not see "Add Dish"
 
 
-    Scenario: Add a dish as visitor even when am at the page
-      Given I am registerd as visitor
-      And I am on the Add Dish page
-      Then I should be on the "Add Dish" page
-      And I should see "Please, enjoy ordering and leave dish creation to our Chef!"
+ Scenario: Add a dish as visitor even when am at the page
+    Given I am registerd as visitor
+    And I am on the Add Dish page
+    Then I should be on the "Add Dish" page
+    And I should see "Please, enjoy ordering and leave dish creation to our Chef!"

@@ -30,6 +30,36 @@
         </h1>
       </li>
     </ul>
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul id="nav" class="right">
+            <li>
+              <% if current_user.try(:admin) %>
+                <a href="/auth/admin/register" class="button">Register Admin</a>
+              <% end %>
+            </li>
+
+            <li>
+              <% if current_user %>
+                Logged in as
+                <%= current_user.username %>
+                <a href="/auth/logout" class="secondary button">Log Out</a>
+            </li>
+            <li>
+              <% elsif request.path != '/auth/login' %>
+                <a href="/auth/register" class="button">Register</a>
+            </li>
+            <li>
+                <a href="/auth/login" class="button">Log In</a>
+            </li>
+            <!-- <li>
+              <% else %>
+                <a href="/auth/register" class="button">Register</a>
+              <% end %>
+            </li> -->
+        </ul>
+
+    </section>
   </nav>
 </div>
 <section class="jumbo">
@@ -43,8 +73,21 @@
   </div>
 </section>
 
+<div id="flash-container">
+  <% if flash[:success] %>
+    <div class="success callout">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
 
-<% if current_user.try(:admin) %>
+  <% if flash[:error] %>
+    <div class="alert callout">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+</div>
+
+<!-- <% if current_user.try(:admin) %>
   <a href="/auth/admin/register" class="button">Register Admin</a>
 <% end %>
 <% if current_user %>
@@ -69,7 +112,7 @@
       <%= flash[:error] %>
     </div>
   <% end %>
-</div>
+</div> -->
 
 <%= yield %>
 

@@ -47,10 +47,9 @@ Feature: As a restuarnt visitor
     Then I should see "Fries"
     Then I should see "Please log in to enjoy ordering!"
 
-    Scenario: View basket not to be visible for admin
-     Given I am registerd as admin
-      And I am on the home page
-      And I click on "Menu"
-      Then I should be on the "Menu" page
-      Then show me the page
-      Then I should not see "View Basket"
+  Scenario: View basket not to be visible for admin
+    Given I am registerd as admin
+    And I am on the home page
+    And I click on "Menu"
+    Then I should be on the "Menu" page
+    Then I should not see "View Basket"
