@@ -4,29 +4,25 @@
 <h3><%= get_category_name(key) %></h3>
 <% @dishes[key].each do |dish| %>
 <div id="<%= dish.id %>">
-  <p><%= dish.name %>
-    -
-    <%= dish.price %>kr</p>
-
-  <% if current_user && !current_user.admin%>
+  <p><%= [dish.name, ' - ', dish.price, 'kr'].join %></p>
+  <% unless current_user.try(:admin) %>
   <form action="/menu/add_to_basket" method="post">
     <input type="hidden" name="basket_item[id]" , value="<%= dish.id %>"/>
     <label for="">Quantity</label>
     <input type="number" name="basket_item[qty]"/>
     <input type="submit" value="Add to basket" class="button"/>
-    <!--%binding.pry%-->
   </form>
 </div>
 <% end %>
 <% end %>
 <% end %>
-<% unless current_user.admin %>
+<% if current_user && !current_user.try(:admin) %>
 <a href="/check_out" class="button">View Basket</a>
-<% else  current_user.admin%>
-<a href="/menu/add_dish" class="button">Add Dish</a>
+<% elsif current_user.try(:admin) %>
+<a href="/menu/add_dish" class="button">Add Dish</a>s
+<% else %>
+<p>Please log in to enjoy ordering!</p>
 <% end %>
-<!--% else %>
-<h2>Please log in to enjoy ordering!</h2-->
 <% else %>
 <h2>You dont have any dishes yet</h2>
 <% end %>
