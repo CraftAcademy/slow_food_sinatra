@@ -1,16 +1,26 @@
-<% if current_user.try(:admin) %>
-<%= form('/menu/add_dish', :post) %>
+<section>
+  <div class="row">
+    <div class="large-6 medium-centered large-4 large-centered columns">
+      <form action="/auth/login" method="post">
+        <div class="row column log-in-form">
+          <h4 class="text-center" style="color:#5A9AA8"> New great food!</h4>
+          <% if current_user.try(:admin) %>
+              <%= form('/menu/add_dish', :post) %>
 
-<% fieldset(:dish) do |f| %>
-<%= f.label(:name) %>
-<%= f.input(:name) %>
-<%= f.label(:price) %>
-<%= f.input(:price) %>
-<% end %>
-<%= select :dish, :category, get_categories %>
-<%= submit 'Add Dish' %>
-<% else %>
-<p>
-  Please, enjoy ordering and leave dish creation to our Chef!
-</p>
-<% end %>
+              <% fieldset(:dish) do |f| %>
+                  <%= f.label(:name) %>
+                  <%= f.input(:name) %>
+                  <%= f.label(:price) %>
+                  <%= f.input(:price) %>
+              <% end %>
+              <%= select :dish, :category, get_categories %>
+          </label>
+          <p><input type="submit" value="Add Dish" class="button expanded"/></p>
+          <% else %>
+              <p>
+                Please, enjoy ordering and leave dish creation to our Chef!
+              </p>
+          <% end %>
+        </div>
+      </form>
+</section>

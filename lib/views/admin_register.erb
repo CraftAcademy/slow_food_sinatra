@@ -1,12 +1,19 @@
-<%= form('/auth/admin/register', :post) %>
-
-<% fieldset(:user) do |f| %>
-<%= f.label(:username) %>
-<%= f.input(:username) %>
-<%= f.label(:password) %>
-<%= f.password(:password) %>
-<%= f.label(:password_confirmation) %>
-<%= f.password(:password_confirmation) %>
-<% end %>
-
-<%= submit 'Create account' %>
+<section>
+  <div class="row">
+    <div class="large-6 medium-centered large-4 large-centered columns">
+      <form action="/auth/login" method="post">
+        <div class="row column log-in-form">
+          <h4 class="text-center" style="color:#5A9AA8"> New admin means more business!</h4>
+          <% fieldset(:user) do |f| %>
+              <%= f.label(:username) %>
+              <%= f.input(:username) %>
+              <%= f.label(:password) %>
+              <%= f.password(:password) %>
+              <%= f.label(:password_confirmation) %>
+              <%= f.password(:password_confirmation) %>
+          <% end %>
+          </label>
+          <p><input type="submit" value="Create account" class="button expanded"/></p>
+        </div>
+      </form>
+</section>
