@@ -5,7 +5,7 @@
 <% @dishes[key].each do |dish| %>
 <div id="<%= dish.id %>">
   <p><%= [dish.name, ' - ', dish.price, 'kr'].join %></p>
-  <% unless current_user.try(:admin) %>
+  <% if current_user && !current_user.try(:admin) %>
   <form action="/menu/add_to_basket" method="post">
     <input type="hidden" name="basket_item[id]" , value="<%= dish.id %>"/>
     <label for="">Quantity</label>
