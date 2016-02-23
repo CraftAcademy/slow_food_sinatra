@@ -11,8 +11,6 @@ require_relative 'helpers/menu_helpers'
 require 'pry'
 require 'tilt/erb'
 
-config.serve_static_assets = true
-
 
 class SlowFood < Sinatra::Base
   enable :sessions
