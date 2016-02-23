@@ -1,6 +1,6 @@
 ### SlowFood (Sinatra)
 
-NOTE: the following application is an assignment developed as part of challenges during Craft Academy coding bootcamp, a 12-week program aiming to build coding skills in 12 weeks using real cases/ challenges in a mix of classes, assignment and personal coaching approach.
+NOTE: the following application is an assignment developed as part of challenges during Craft Academy coding bootcamp /http://craftacademy.se/, a 12-week program aiming to build coding skills in 12 weeks using real cases/ challenges in a mix of classes, assignment and personal coaching approach.
 
 The case: Our client is a Restaurant owner that needs an website where he can list his menu and allow visitors to view menu and place orders.
 

@@ -26,3 +26,58 @@
 <% else %>
 <h2>You dont have any dishes yet</h2>
 <% end %>
+
+<!--
+<section class="search">
+  <div class="row">
+    <div class="small-12 large-10 columns small-centered">
+      <h2><%= get_category_name(key) %></h2>
+      <form class="custom">
+        <div class="row">
+          <div class="large-3 small-12 columns">
+            <% @dishes[key].each do |dish| %>
+            <div id="<%= dish.id %>">
+              <label>
+                Food Type:
+              </label>
+              <p><%= [dish.name] %></p>
+            </div>
+            <div class="large-3 small-6 columns">
+              <label>
+                Price Range:
+              </label>
+              <p><%= [dish.price, 'kr'] %></p>
+            </div>
+            <div class="large-3 small-6 columns">
+              <% unless current_user.try(:admin) %>
+              <form action="/menu/add_to_basket" method="post">
+                <input type="hidden" name="basket_item[id]" , value="<%= dish.id %>"/>
+                <label>
+                  Quantity:
+                </label>
+                <input type="number" name="basket_item[qty]"/>
+              </div>
+              <div class="large-3 small-12 columns expand">
+                <input type="submit" value="Add to basket" class="button"/>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<% end %>
+<% end %>
+<% end %>
+<% if current_user && !current_user.try(:admin) %>
+<a href="/check_out" class="button">View Basket</a>
+<% elsif current_user.try(:admin) %>
+<a href="/menu/add_dish" class="button">Add Dish</a>s
+<% else %>
+<p>Please log in to enjoy ordering!</p>
+<% end %>
+<% else %>
+<h2>You dont have any dishes yet</h2>
+<% end %> -->
