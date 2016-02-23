@@ -54,6 +54,13 @@ Feature: As a visitor to the resturant website
     And I click on "Finalize Order"
     Then I should see "Thank you for placing your order with total of 70 kr your order expected to be ready for pickup at 2016-02-22 18:30:00 +0100 Enjoy your meal Visitor"
 
+ Scenario: Basket clean up after order finalization
+    Given  I finalized my order
+    And I click on "Menu"
+    Then I should be on the "Menu" page
+    And I click on "View Basket"
+    Then I should see "Your basket is empty"
+
  Scenario: order cancel
     Given  Two "Fries" added to my basket already
     And I click on "View Basket"

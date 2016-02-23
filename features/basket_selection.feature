@@ -45,6 +45,7 @@ Feature: As a restuarnt visitor
     And I click on "Menu"
     Then I should be on the "Menu" page
     Then I should see "Fries"
+    Then I should not see "Add to basket"
     Then I should see "Please log in to enjoy ordering!"
 
   Scenario: View basket not to be visible for admin

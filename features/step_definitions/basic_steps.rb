@@ -95,6 +95,18 @@ Given(/^Two "([^"]*)" added to my basket already$/) do |arg1|
 '
 end
 
+Given(/^I finalized my order$/) do
+   steps '
+   Given  Two "Fries" added to my basket already
+   And I click on "View Basket"
+   Then I should be on the "check out" page
+   And I should see "2 Dishes of Fries, price per each: 35kr"
+   And The time now is "2016-02-22 18:00:00 +0100"
+   And I click on "Finalize Order"
+   Then I should see "Thank you for placing your order with total of 70 kr your order expected to be ready for pickup at 2016-02-22 18:30:00 +0100 Enjoy your meal Visitor"
+   '
+ end
+
 And(/^I click on "([^"]*)"$/) do |element|
   click_link_or_button element
 end

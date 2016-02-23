@@ -152,6 +152,7 @@ class SlowFood < Sinatra::Base
 
   post '/check_out' do
     @basket = Basket.get(session[:b_id])
+    session.tap { |hs| hs.delete(:b_id) }
     erb :order_confirm
   end
 
