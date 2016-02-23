@@ -1,0 +1,47 @@
+.log-in-form {
+  border: 1px solid #cacaca;
+  padding: 1rem;
+  border-radius: 3px; }
+
+
+  body {
+    margin: 2rem; }
+
+  .active-tb {
+    position: relative;
+    box-shadow: 0px 2px 10px 0px rgba(50, 50, 50, 0.5);
+    transform: scale(1);
+    border: 0;
+    transition: 0.4s ease;
+    z-index: 13; }
+    .active-tb:hover {
+      position: relative;
+      box-shadow: 0px 2px 10px 0px rgba(50, 50, 50, 0.5);
+      transform: scale(1.25);
+      border: 0;
+      z-index: 15; }
+
+
+
+      .search{
+         margin-top: 50px;
+       }
+        h2{
+           text-align: center;
+         }
+         form.custom .custom.dropdown{
+           height: 45px;
+         }
+         label{
+           margin-bottom: 10px;
+         }
+         form.custom .custom.dropdown{
+           padding-top: 5px;
+         }
+         form.custom .custom.dropdown .selector{
+           top: 5px;
+         }
+         .button{
+           height: 45px;
+           margin-top:25px;
+         }
