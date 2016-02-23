@@ -1,0 +1,41 @@
+<% unless !@basket %>
+<% if current_user %>
+<% @basket.basket_items.each do |item |%>
+<div>
+  <p><%= item.qty %>
+    Dishes of
+    <%= item.dish.name %>, price per each:
+    <%= item.dish.price %>kr</p>
+  <% end %>
+  <div>
+    <p>Your order total is
+      <%= @basket.total %>
+      kr</p>
+    <%= form('/check_out', :post) %>
+
+    <% fieldset(:basket) do |f| %>
+    <%= f.hidden(:basket_id, value: @basket.id) %>
+
+    <input type="submit" value="Finalize Order" class="button"/>
+    <a href="/cancel_order" class="secondary button">Cancel Order</a>
+    <!-- <input type="button" id="cancel" value="Cancel Order" class="secondary button"/> -->
+    <% end %>
+
+  <% else %>
+    <p>
+      Please log in to enjoy ordering!
+    </p>
+
+    <% end %>
+
+    <% else %>
+    <h2>Your basket is empty</h2>
+    <% end %>
+
+    <!-- <script type="text/javascript">
+      $(document).ready(function () {
+        $('#cancel').click(function () {
+          window.location.href = "/cancel_order";
+        });
+      });
+    </script> -->

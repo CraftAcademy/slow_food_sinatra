@@ -1,0 +1,12 @@
+<%= form('/auth/admin/register', :post) %>
+
+<% fieldset(:user) do |f| %>
+<%= f.label(:username) %>
+<%= f.input(:username) %>
+<%= f.label(:password) %>
+<%= f.password(:password) %>
+<%= f.label(:password_confirmation) %>
+<%= f.password(:password_confirmation) %>
+<% end %>
+
+<%= submit 'Create account' %>
