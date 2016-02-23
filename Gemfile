@@ -25,6 +25,7 @@ gem 'dm-timestamps'
 gem 'dm-transactions'
 gem 'dm-types'
 gem 'dm-validations'
+gem 'rack-flash-session', '~> 1.0', '>= 1.0.2'
 
 group :development, :test do
   gem 'dotenv'
