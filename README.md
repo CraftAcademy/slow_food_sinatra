@@ -4,6 +4,10 @@ NOTE: the following application is an assignment developed as part of challenges
 
 The case: Our client is a Restaurant owner that needs an website where he can list his menu and allow visitors to view menu and place orders.
 
+You can check the working application deployed using Heroku on :
+
+/https://mazen-slow-food.herokuapp.com/
+
 #### Scope (v1)
 
 The first version of the application has limited functionality

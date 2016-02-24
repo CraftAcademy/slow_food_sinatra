@@ -1,9 +1,10 @@
 .jumbo{
-    background-image: url(../img/jumbo_bg.jpg);
+    background-image: url(../img/header_3.jpg);
     background-size: cover;
     background-attachment: fixed;
     padding: 175px 0;
     margin-bottom: 30px;
+
 }
 
 .jumbo h1{

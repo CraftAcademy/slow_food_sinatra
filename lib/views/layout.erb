@@ -21,25 +21,29 @@
   <div class="top-bar-left">
     <ul class="menu">
       <li class="menu-text">SlowFood</li>
-      <li><% if current_user.try(:admin) %>
+      <li>
+        <% if current_user.try(:admin) %>
             <a href="/auth/admin/register" class="button">Register Admin</a>
         <% end %></li>
-      <li><% if current_user %>
+      <li>
+        <% if current_user %>
             <a href="/auth/logout" class="secondary button">Log Out</a></li>
             <li> Logged in as <%= current_user.username %></li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      <li><% elsif request.path != '/auth/login' %>
+            </ul>
+            </div>
+            <div class="top-bar-right">
+              <ul class="menu">
+                <li>
+        <% elsif request.path != '/auth/login' %>
             <a href="/auth/register" class="button">Register</a></li>
-      <li><a href="/auth/login" class="button">Log In</a></li>
-      <li><% else %>
+            <li><a href="/auth/login" class="button">Log In</a></li>
+            <li>
+        <% else %>
             <a href="/auth/register" class="button">Register</a>
         <% end %></li>
-    </ul>
-  </div>
-</div>
+        </ul>
+        </div>
+        </div>
 <section class="jumbo">
   <div class="row">
     <div class="large-12 columns">
@@ -64,35 +68,6 @@
       </div>
   <% end %>
 </div>
-
-
-<!--
-<% if current_user.try(:admin) %>
-  <a href="/auth/admin/register" class="button">Register Admin</a>
-<% end %>
-<% if current_user %>
-  Logged in as
-  <%= current_user.username %>
-  <a href="/auth/logout" class="secondary button">Log Out</a>
-<% elsif request.path != '/auth/login' %>
-  <a href="/auth/register" class="button">Register</a>
-  <a href="/auth/login" class="button">Log In</a>
-<% else %>
-  <a href="/auth/register" class="button">Register</a>
-<% end %>
-<div id="flash-container">
-  <% if flash[:success] %>
-    <div class="success callout">
-      <%= flash[:success] %>
-    </div>
-  <% end %>
-
-  <% if flash[:error] %>
-    <div class="alert callout">
-      <%= flash[:error] %>
-    </div>
-  <% end %>
-</div> -->
 
 
 <%= yield %>

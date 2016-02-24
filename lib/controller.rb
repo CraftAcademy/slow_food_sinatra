@@ -76,14 +76,15 @@ class SlowFood < Sinatra::Base
 
     post '/admin/register' do
       user = User.new(
-        username: params[:user][:username],
-        password: params[:user][:password],
-        password_confirmation: params[:user][:password_confirmation],
-        admin: true
+          username: params[:user][:username],
+          password: params[:user][:password],
+          password_confirmation: params[:user][:password_confirmation],
+          admin: true
       )
-      begin user.save
-            flash[:success] = "Successfully created account for #{user.username}"
-            redirect '/'
+      begin
+        user.save
+        flash[:success] = "Successfully created account for #{user.username}"
+        redirect '/'
       rescue
         flash[:error] = user.errors.full_messages.join(',')
       end
@@ -91,16 +92,17 @@ class SlowFood < Sinatra::Base
 
     post '/register' do
       user = User.new(
-        username: params[:user][:username],
-        password: params[:user][:password],
-        password_confirmation: params[:user][:password_confirmation],
-        email: params[:user][:email],
-        phone_number: params[:user][:phone_number]
+          username: params[:user][:username],
+          password: params[:user][:password],
+          password_confirmation: params[:user][:password_confirmation],
+          email: params[:user][:email],
+          phone_number: params[:user][:phone_number]
       )
-      begin user.save
-            env['warden'].authenticate!
-            flash[:success] = "Successfully created account for #{current_user.username}"
-            redirect '/'
+      begin
+        user.save
+        env['warden'].authenticate!
+        flash[:success] = "Successfully created account for #{current_user.username}"
+        redirect '/'
       rescue
         flash[:error] = user.errors.full_messages.join(',')
       end
@@ -170,17 +172,17 @@ class SlowFood < Sinatra::Base
   post '/menu/add_dish' do
     category = Category.get(params[:dish][:category])
     dish = Dish.new(
-      name: params[:dish][:name],
-      price: params[:dish][:price],
-      category: category,
-      user: current_user
+        name: params[:dish][:name],
+        price: params[:dish][:price],
+        category: category,
+        user: current_user
     )
     if current_user.admin == true
       dish.save
       flash[:success] = "Successfully added #{dish.name}"
     else
       flash[:error] = 'Sorry!, you are not authorized to add dishes'
-     end
+    end
     redirect '/'
   end
 

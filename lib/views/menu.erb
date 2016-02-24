@@ -2,7 +2,7 @@
     <div class="row small-up-2 large-up-4">
       <div class="column">
         <% @dishes.keys.each do |key| %>
-            <h3><%= get_category_name(key) %></h3>
+            <h3><u><%= get_category_name(key) %></u></h3>
             <% @dishes[key].each do |dish| %>
                 <div id="<%= dish.id %>">
                   <h5><%= [dish.name, ' - ', dish.price, 'kr'].join %></h5>
