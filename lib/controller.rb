@@ -48,10 +48,6 @@ class SlowFood < Sinatra::Base
     erb :index
   end
 
-  get '/admin' do
-    erb :index_admin, layout: :admin
-  end
-
   get '/auth/login' do
     erb :login
   end
