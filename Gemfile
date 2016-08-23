@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.3.1'
 
 gem 'sinatra', '1.3.4'
 gem 'sinatra-flash', '0.3.0', require: 'sinatra/flash'
